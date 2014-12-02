@@ -1,3 +1,7 @@
+#lang racket
+
+(provide (all-defined-out))
+
 ;; Jason Hemann and Dan Friedman
 ;; microKanren, final implementation from paper
 
@@ -8,6 +12,8 @@
 (define (walk u s)
   (let ((pr (and (var? u) (assp (lambda (v) (var=? u v)) s))))
     (if pr (walk (cdr pr) s) u)))
+
+(define assp assf)
 
 (define (ext-s x v s) `((,x . ,v) . ,s))
 

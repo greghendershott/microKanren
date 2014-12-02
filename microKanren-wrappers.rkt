@@ -1,3 +1,8 @@
+#lang racket
+
+(require "microKanren.rkt")
+
+(provide (all-defined-out))
 
 ;;;; How to make a simple miniKanren (substitution only)
 
@@ -102,6 +107,8 @@
              (errorf 'test-check
                "Failed: ~a~%Expected: ~a~%Computed: ~a~%"
                'tested-expression expected produced)))))))
+
+(define errorf error)
 
 (define (appendo l s out)
   (conde

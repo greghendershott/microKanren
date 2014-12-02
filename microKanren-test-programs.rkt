@@ -1,3 +1,6 @@
+#lang racket
+
+(require "microKanren.rkt")
 
 (define-syntax test-check
   (syntax-rules ()
